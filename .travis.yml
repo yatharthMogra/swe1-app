@@ -1,0 +1,33 @@
+language: python
+python:
+  - "3.11"
+
+cache: pip
+
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - python manage.py migrate --noinput
+
+script:
+  - black --check .
+  - flake8 .
+  - coverage run manage.py test
+  - coverage report
+
+after_success:
+  - coveralls
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "django-polls-app"
+  env: "django-polls-env"
+  bucket_name: "elasticbeanstalk-us-east-1-209292847448"
+  bucket_path: "django-polls-app"
+  access_key_id: "$AWS_ACCESS_KEY_ID"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+  skip_cleanup: true
+  on:
+    branch: main

@@ -1,2 +1,6 @@
 django==5.2
 gunicorn==25.1.0
+black
+flake8
+coverage
+coveralls
