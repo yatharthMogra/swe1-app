@@ -31,4 +31,4 @@ On successful builds from `main`, Travis deploys to AWS Elastic Beanstalk (`djan
 
 Deployed app URL:
 
-- `https://django-polls-env.eba-mpvmazvx.us-east-1.elasticbeanstalk.com/polls/`
+- `https://django-polls-env.eba-mqvfbkhp.us-east-1.elasticbeanstalk.com/polls/`
