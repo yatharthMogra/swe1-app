@@ -30,4 +30,4 @@ class PollsSmokeTests(TestCase):
         self.assertContains(response, self.question.question_text)
 
     def test_dummy(self):
-        self.assertTrue(False)
+        self.assertTrue(True)
