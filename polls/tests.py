@@ -28,3 +28,6 @@ class PollsSmokeTests(TestCase):
         response = self.client.get(reverse("polls:detail", args=[self.question.id]))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.question.question_text)
+
+    def test_dummy(self):
+        self.assertTrue(False)
